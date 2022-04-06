@@ -249,6 +249,7 @@
 (require 'evil)
 (evil-mode 0)
 
+;(global-linum-mode t)
 
 ;(custom-set-variables
  ;; custom-set-variables was added by Custom.

@@ -195,7 +195,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (uptimes github-review forge github-clone bug-reference-github yagist git-commit magit-todos magit git-timemachine git-modes git-blamed company-quickhelp company command-log-mode scratch diminish exec-path-from-shell gnu-elpa-keyring-update fullframe seq which-key highlight-escape-sequences whole-line-or-region move-dup page-break-lines multiple-cursors avy browse-kill-ring symbol-overlay rainbow-delimiters beacon mode-line-bell vlf list-unicode-display unfill session windswap switch-window marginalia vertico whitespace-cleanup-mode wgrep vc-darcs use-package textile-mode sudo-edit slime-company shfmt regex-tool rainbow-mode popup paredit origami mmm-mode lua-mode ledger-mode ipretty info-colors immortal-scratch ibuffer-vc ibuffer-projectile htmlize highlight-quoted gnuplot flycheck-relint flycheck-package flycheck-ledger flycheck-color-mode-line flycheck-clojure evil envrc elisp-slime-nav elein dotenv-mode diredfl dimmer diff-hl crontab-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cljsbuild-mode cl-libify cask-mode browse-at-remote auto-compile anzu alert aggressive-indent)))
+    (uptimes github-review forge github-clone bug-reference-github yagist git-commit magit-todos magit git-timemachine git-modes git-blamed company-quickhelp company command-log-mode scratch diminish exec-path-from-shell gnu-elpa-keyring-update fullframe seq zygospore which-key highlight-escape-sequences whole-line-or-region move-dup page-break-lines multiple-cursors avy browse-kill-ring symbol-overlay rainbow-delimiters beacon mode-line-bell vlf list-unicode-display unfill session windswap switch-window marginalia vertico whitespace-cleanup-mode wgrep vc-darcs use-package textile-mode sudo-edit slime-company shfmt regex-tool rainbow-mode popup paredit origami mmm-mode lua-mode ledger-mode ipretty info-colors immortal-scratch ibuffer-vc ibuffer-projectile htmlize highlight-quoted gnuplot flycheck-relint flycheck-package flycheck-ledger flycheck-color-mode-line flycheck-clojure evil envrc elisp-slime-nav elein dotenv-mode diredfl dimmer diff-hl crontab-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cljsbuild-mode cl-libify cask-mode browse-at-remote auto-compile anzu alert aggressive-indent)))
  '(session-use-package t nil (session)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -230,9 +230,7 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-;(add-to-list 'load-path "~/.emacs.d/custom")
-
-;(require 'setup-general)
+;(add-to-list 'load-general)
 (if (version< emacs-version "24.4")
     (require 'setup-ivy-counsel)
 ;  (require 'setup-helm)
@@ -242,14 +240,14 @@
 ;(require 'setup-cedet)
 ;(require 'setup-editing)
 
+(require 'setup-general)
+
 (message "<<<<<<<<<<<<<<<<<<<evil>>>>>>>>>>>>>>>>>>>>>>")
 ;; Download Evil
 (unless (package-installed-p 'evil)
   (package-install 'evil))
 (require 'evil)
-(evil-mode 1)
-
-;(setq backup-directory-alist '(("." . "~/saves")))
+(evil-mode 0)
 
 
 ;(custom-set-variables

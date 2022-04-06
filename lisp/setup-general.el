@@ -57,10 +57,11 @@
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 (windmove-default-keybindings)
 
-
+(message "<<<<<<<<<<<<<<<<<<<<<<<set backup>>>>>>>>>>>>>")
 (setq
   backup-by-copying t
   backup-directory-alist '(("." . "~/saves_emacs"))
   delete-old-versions t)
+
 
 (provide 'setup-general)
